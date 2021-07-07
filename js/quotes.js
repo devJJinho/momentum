@@ -1,4 +1,10 @@
-const quotes=[
+const quote=document.querySelector("#quote span:first-child");
+const author=document.querySelector("#quote span:last-child");
+
+import { CONSTANT } from "./constant.js";
+
+const handleQuotes=(function(){
+    const quotes=[
     {
         quotes:"삶이 있는 한 희망은 있다.",
         author:"키케로"
@@ -28,15 +34,21 @@ const quotes=[
         author:"찰스다윈"
     }
 
-]
+];
 
-const quote=document.querySelector("#quote span:first-child");
-const author=document.querySelector("#quote span:last-child");
+    return { 
+        paintQuotes: function(){
+        const selected=quotes[Math.round(Math.random()*(quotes.length-1))];
+        quote.innerText=selected.quotes;
+        author.innerText=selected.author;
+        quote.classList.remove(CONSTANT.HIDDEN_CLASSNAME);
+        author.classList.remove(CONSTANT.HIDDEN_CLASSNAME);
+        },
+        hideQuotes: function(){
+            quote.classList.add(CONSTANT.HIDDEN_CLASSNAME);
+            author.classList.add(CONSTANT.HIDDEN_CLASSNAME);
+        }
+    }
+})();
 
-function paintQuotes(){
-    const selected=quotes[Math.round(Math.random()*(quotes.length-1))];
-    quote.innerText=selected.quotes;
-    author.innerText=selected.author;
-}
-
-paintQuotes();
+export {handleQuotes}
