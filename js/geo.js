@@ -6,7 +6,7 @@ async function initGeo(){
         const curPos=handleGeoInfo.getGeoInfo();
         lat=curPos.lat;
         lng=curPos.lng;
-        return new Promise((resolve,reject)=>{resolve({"lat":lat,"lng":lng})});
+        //return new Promise((resolve)=>{resolve({"lat":lat,"lng":lng})});
     }
     else{
         const getPosition=function(){
@@ -14,17 +14,19 @@ async function initGeo(){
                 navigator.geolocation.getCurrentPosition(resolve,reject);
             })
         }
-        getPosition()
+        /*return*/ await getPosition()
         .then((position)=>{
             lat=position.coords.latitude;
             lng=position.coords.longitude;
             console.log("a");
             handleGeoInfo.setLoca(lat,lng);
             handleGeoInfo.updateLoca();
-            return new Promise((resolve,reject)=>{resolve({"lat":lat,"lng":lng})});
-        })
+            console.dir(position);
+            return new Promise((position)=>{position({"lat":lat,"lng":lng})});
+        });
     }
-    
+
+    return new Promise((resolve)=>{resolve({"lat":lat,"lng":lng})});
 }
 /*
 function delay(ms){

@@ -19,16 +19,23 @@ const todoArray=function todoArray(){
             this.syncArray();
         },
         initArray:function(){
-            const get=localStorage.getItem(CONSTANT.TODOS_KEY);
-            if(get!==null){
-                const parseArray=JSON.parse(get);
-                todos=parseArray;
-            }
+            return new Promise((resolve,reject)=>{
+                const get=localStorage.getItem(CONSTANT.TODOS_KEY);
+                if(get!==null){
+                    const parseArray=JSON.parse(get);
+                    todos=parseArray;
+                }
+                else{
+                    todos=[];
+                }
+                resolve();
+            })
         },
         syncArray:function(){
             localStorage.setItem(CONSTANT.TODOS_KEY,JSON.stringify(todos));
         },
         getArray:function(){
+            console.log("get Array:"+todos);
             return todos;
         },
         //수정 필요
@@ -89,16 +96,16 @@ function deleteToDo(event){
     deleteObject.remove();
 };
 
-export function todoInit(){
-    paintTodoDiv();
-    todoArray.initArray();
+export async function todoInit(){
+    await todoArray.initArray();
     const todos=todoArray.getArray();
     todos.forEach(paintToDo);
+    paintTodoDiv();
 };
 
 export function hideTodo(){
+    const todoSpan=todoList.querySelectorAll("span")
+    todoSpan.forEach((item)=>{item.parentElement.remove()});
+    console.log(todoSpan);
     todoDiv.classList.add(CONSTANT.HIDDEN_CLASSNAME);
 };
-
-
-

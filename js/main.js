@@ -4,7 +4,7 @@ import { paintGreeting,hideGreeting } from "./greeting.js";
 import { handleQuotes } from "./quotes.js";
 import { paintBg } from "./wallpaper.js";
 import { CONSTANT } from "./constant.js";
-import { initWeather } from './weather.js';
+import {initWeather,hideWeather} from './weather.js';
 
 const loginInput=document.querySelector("#login-form input");
 const loginForm=document.querySelector("#login-form");
@@ -49,7 +49,7 @@ window.onload=function(){
 
 function pageInit(){
     paintGreeting(username.getName());
-    paintClock();
+    //paintClock();
     handleQuotes.paintQuotes();
     todoInit();
     initWeather();
@@ -69,6 +69,7 @@ function paintLogin(){
     hideGreeting();
     handleQuotes.hideQuotes();
     hideTodo();
+    hideWeather();
 
     loginForm.classList.remove(CONSTANT.HIDDEN_CLASSNAME);
     loginForm.addEventListener("submit",handleLoginSubmit); 

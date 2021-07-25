@@ -12,8 +12,16 @@
             <input required maxlength="15" value="" type="text" placeholder="What is your name?"/> 
             <button>log in</button>
         </form>
+        <div id="weatherDiv" class="hidden">
+            <span>
+                <h1 id="weatherCity"></h1>
+                <img onerror="this.src=/img/loading.png">
+                <h1 id="weatherInfo"></h1>
+            </span>
+            
+        </div>
         <div id="greetingDiv" class="hidden">
-            <h1 id="greeting">Hello</h1>
+            <h1 id="greetingMsg">Hello</h1>
             <div>
                 <button>Reset</button>
             </div>
@@ -26,11 +34,10 @@
             </ul>
         </div>
         <h2 id="clock"> </h2>
-        <div id="quote">
+        <div id="quoteDiv">
             <span> </span>
             <span> </span>
         </div>    
-        
-        <script type="module" src="js/main.js"></script>
+        <script src="/public/index_bundle.js/main.js"></script>
     </body>
 </html> 
