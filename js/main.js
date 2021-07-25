@@ -79,4 +79,6 @@ function hideLogin(){
     loginForm.classList.add(CONSTANT.HIDDEN_CLASSNAME);
 }
 
+setInterval(initWeather(),3600000);
+
 export {paintLogin}

@@ -78,6 +78,11 @@ const handleWeatherInfo=(function(){
             const get=localStorage.getItem(CONSTANT.WEATHER_KEY);
             if(get!==null){
                 const parseWeather=JSON.parse(get);
+                const date=new Date();
+                const curTimeStamp=date.getTime();
+                if(curTimeStamp-parseWeather.timeStamp>=3500000){
+                    return false;
+                }
                 weatherInfo=parseWeather;
                 isError=false;
                 return true;
@@ -99,6 +104,9 @@ const handleWeatherInfo=(function(){
             catch{
                 weatherInfo=weather
             }
+            const date=new Date();
+            const timeStamp=date.getTime();
+            weatherInfo.timeStamp=timeStamp;
             isError=false;
             localStorage.setItem(CONSTANT.WEATHER_KEY,JSON.stringify(weatherInfo));
         },
