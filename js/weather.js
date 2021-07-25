@@ -30,8 +30,13 @@ async function initWeather(){
     }
     else{
         await getWeather();
-        console.log("init");
-        paintWeather(handleWeatherInfo.getWeather());
+        if(handleWeatherInfo.getWeather!==false){
+            paintWeather(handleWeatherInfo.getWeather());
+        }
+        else{
+            hideWeather();
+        }
+        
     }
 }
 

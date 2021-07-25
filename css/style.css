@@ -1,3 +1,14 @@
 .hidden{
     display: none; 
 }
+
+div#centerDiv{
+    margin : 0 auto;
+    width:1080px;
+}
+
+div#weatherDiv{
+    position: absolute;
+    top: 12px;
+    right: 27px;
+}

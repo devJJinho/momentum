@@ -8,36 +8,38 @@
         <link rel="stylesheet" sype="text/css" href="css/style.css"/>
     </head>
     <body>
-        <form id="login-form" class="hidden">
-            <input required maxlength="15" value="" type="text" placeholder="What is your name?"/> 
-            <button>log in</button>
-        </form>
+        <div id="centerDiv">
         <div id="weatherDiv" class="hidden">
             <span>
                 <h1 id="weatherCity"></h1>
                 <img onerror="this.src='./img/loading.png'">
                 <h1 id="weatherInfo"></h1>
             </span>
-            
         </div>
-        <div id="greetingDiv" class="hidden">
-            <h1 id="greetingMsg">Hello</h1>
-            <div>
-                <button>Reset</button>
-            </div>
-        </div>
-        <div id="todoDiv" class="hidden">
-            <form id="todo-form">
-                <input type="text" placeholder="Write a To Do and Press Enter" required/>
+        
+            <form id="login-form" class="hidden">
+                <input required maxlength="15" value="" type="text" placeholder="What is your name?"/> 
+                <button>log in</button>
             </form>
-            <ul id="todo-list">
-            </ul>
-        </div>
-        <h2 id="clock"> </h2>
-        <div id="quoteDiv">
-            <span> </span>
-            <span> </span>
-        </div>    
+            <div id="greetingDiv" class="hidden">
+                <h1 id="greetingMsg">Hello</h1>
+                <div>
+                    <button>Reset</button>
+                </div>
+            </div>
+            <div id="todoDiv" class="hidden">
+                <form id="todo-form">
+                    <input type="text" placeholder="Write a To Do and Press Enter" required/>
+                </form>
+                <ul id="todo-list">
+                </ul>
+            </div>
+            <h2 id="clock"> </h2>
+            <div id="quoteDiv">
+                <span> </span>
+                <span> </span>
+            </div> 
+        </div>   
         <script src="main.js"></script>
     </body>
 </html> 
