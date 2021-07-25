@@ -25,6 +25,7 @@ function hideWeather(){
 }
 
 async function initWeather(){
+    console.log("initWeather");
     if(handleWeatherInfo.doesExist()){
         paintWeather(handleWeatherInfo.getWeather());
     }
@@ -55,17 +56,13 @@ async function getWeather(){
         const body=await response.json();
         console.log(body);
         handleWeatherInfo.setWeather(body);
-        console.log("getweather");
         if(body.error){
             handleWeatherInfo.setError();
             }
-        //return new Promise((resolve)=>{resolve({body})});
     }
     catch(error){
-        console.log("Catch");
         console.log(error);
         handleWeatherInfo.setError();
-        //return new Promise((resolve)=>{resolve({error})});
     };
     
 }
@@ -80,7 +77,7 @@ const handleWeatherInfo=(function(){
                 const parseWeather=JSON.parse(get);
                 const date=new Date();
                 const curTimeStamp=date.getTime();
-                if(curTimeStamp-parseWeather.timeStamp>=3500000){
+                if(curTimeStamp-parseWeather.timeStamp>=3600000){
                     return false;
                 }
                 weatherInfo=parseWeather;
