@@ -5,6 +5,7 @@ import { handleQuotes } from "./quotes.js";
 import { paintBg } from "./wallpaper.js";
 import { CONSTANT } from "./constant.js";
 import {initWeather,hideWeather} from './weather.js';
+import '../css/style.css';
 
 const loginInput=document.querySelector("#login-form input");
 const loginForm=document.querySelector("#login-form");
