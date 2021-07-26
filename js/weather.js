@@ -17,7 +17,7 @@ function paintWeather(weather){
     weatherCity.innerText=weather.name;
     weatherInfo.innerText=`Temp : ${temp}°`;
     weatherIcon.src=`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`;
-    window.onload=()=>{weatherDiv.classList.remove(CONSTANT.HIDDEN_CLASSNAME)};
+    weatherDiv.classList.remove(CONSTANT.HIDDEN_CLASSNAME);
 }
 
 function hideWeather(){
