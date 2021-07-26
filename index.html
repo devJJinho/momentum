@@ -8,38 +8,39 @@
         <link rel="stylesheet" sype="text/css" href="css/style.css"/>
     </head>
     <body>
-        <div id="centerDiv">
-        <div id="weatherDiv" class="hidden">
-            <span>
-                <h1 id="weatherCity"></h1>
-                <img onerror="this.src='./img/loading.png'">
-                <h1 id="weatherInfo"></h1>
-            </span>
-        </div>
-        
-            <form id="login-form" class="hidden">
-                <input required maxlength="15" value="" type="text" placeholder="What is your name?"/> 
-                <button>log in</button>
-            </form>
-            <div id="greetingDiv" class="hidden">
-                <h1 id="greetingMsg">Hello</h1>
-                <div>
-                    <button>Reset</button>
+        <div id=background-overlay>
+                <div id="weatherDiv" class="hidden">
+                    <span>
+                        <h1 id="weatherCity"></h1>
+                        <img onerror="this.src='./img/loading.png'">
+                        <h1 id="weatherInfo"></h1>
+                    </span>
                 </div>
-            </div>
-            <div id="todoDiv" class="hidden">
-                <form id="todo-form">
-                    <input type="text" placeholder="Write a To Do and Press Enter" required/>
+            <div id="centerDiv">
+                <form id="login-form" class="hidden">
+                    <input required maxlength="15" value="" type="text" placeholder="What is your name?"/> 
+                    <button>log in</button>
                 </form>
-                <ul id="todo-list">
-                </ul>
+                <div id="greetingDiv" class="hidden">
+                    <h1 id="greetingMsg">Hello</h1>
+                    <div id="resetDiv">
+                        <button id="resetBtn">Reset</button>
+                    </div>
+                </div>
+                <h2 id="clock"> </h2>
+                <div id="todoDiv" class="hidden">
+                    <form id="todo-form">
+                        <input type="text" placeholder="Write a To-Do and Press Enter" required/>
+                    </form>
+                    <ul id="todo-list">
+                    </ul>
+                </div>
+                <div id="quoteDiv">
+                    <span> </span>
+                    <span> </span>
+                </div> 
             </div>
-            <h2 id="clock"> </h2>
-            <div id="quoteDiv">
-                <span> </span>
-                <span> </span>
-            </div> 
-        </div>   
+        </div> 
         <script src="index.js"></script>
     </body>
 </html> 

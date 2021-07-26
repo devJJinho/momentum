@@ -68,10 +68,11 @@ const paintToDo=(function(){
     cnt=cnt+1;
     span.innerText=newTodo;
     btn.innerText="❌";
+    btn.id="todoDelBtn";
     btn.addEventListener("click",deleteToDo);
     listItem.appendChild(btn);
     listItem.appendChild(span);
-    todoList.appendChild(listItem);
+    todoList.insertBefore(listItem,todoList.firstChild);
     }
 })();
 

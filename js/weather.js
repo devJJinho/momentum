@@ -15,7 +15,7 @@ const PATH=".netlify/functions/weather";
 function paintWeather(weather){
     const temp=(weather.main.temp-CONSTANT.TEMP_INDEX).toFixed(1);
     weatherCity.innerText=weather.name;
-    weatherInfo.innerText=`Temp:${temp}`;
+    weatherInfo.innerText=`Temp : ${temp}°`;
     weatherIcon.src=`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`;
     weatherDiv.classList.remove(CONSTANT.HIDDEN_CLASSNAME);
 }

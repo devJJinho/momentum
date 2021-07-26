@@ -8,6 +8,7 @@ import {initWeather,hideWeather} from './weather.js';
 
 const loginInput=document.querySelector("#login-form input");
 const loginForm=document.querySelector("#login-form");
+// const mainContents=document.querySelector("#centerDiv");
 
 const username=(function username(name){
     let username="";
@@ -49,7 +50,7 @@ window.onload=function(){
 
 function pageInit(){
     paintGreeting(username.getName());
-    //paintClock();
+    paintClock();
     handleQuotes.paintQuotes();
     todoInit();
     initWeather();
@@ -70,6 +71,7 @@ function paintLogin(){
     handleQuotes.hideQuotes();
     hideTodo();
     hideWeather();
+    // hideContents();
 
     loginForm.classList.remove(CONSTANT.HIDDEN_CLASSNAME);
     loginForm.addEventListener("submit",handleLoginSubmit); 
@@ -79,6 +81,9 @@ function hideLogin(){
     loginForm.classList.add(CONSTANT.HIDDEN_CLASSNAME);
 }
 
+// function hideContents(){
+//     mainContents.classList.add(CONSTANT.HIDDEN_CLASSNAME);
+// }
 window.onfocus=()=>{
     initWeather()
 };
