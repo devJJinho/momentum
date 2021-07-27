@@ -86,7 +86,9 @@ function hideLogin(){
 //     mainContents.classList.add(CONSTANT.HIDDEN_CLASSNAME);
 // }
 window.onfocus=()=>{
-    initWeather()
+    if(username.isLogin()){
+        initWeather()
+    }
 };
 
 export {paintLogin}
