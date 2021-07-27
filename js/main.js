@@ -74,12 +74,12 @@ function paintLogin(){
     hideWeather();
     // hideContents();
 
-    loginForm.classList.remove(CONSTANT.HIDDEN_CLASSNAME);
+    loginForm.classList.remove(CONSTANT.DISPLAY_HIDDEN_CLASSNAME);
     loginForm.addEventListener("submit",handleLoginSubmit); 
 }
 
 function hideLogin(){
-    loginForm.classList.add(CONSTANT.HIDDEN_CLASSNAME);
+    loginForm.classList.add(CONSTANT.DISPLAY_HIDDEN_CLASSNAME);
 }
 
 // function hideContents(){

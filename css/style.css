@@ -4,10 +4,14 @@
     visibility: hidden;
 }
 
+.displayHidden{
+    display:none;
+}
+
 div#centerDiv{
     width:70%;
     height:70%;
-    margin : 0% auto auto auto;
+    margin : 3% auto auto auto;
     text-align: center;
 }
 
@@ -30,6 +34,10 @@ span{
     align-items: center;
     display:inline-flex;
     text-align: center;
+}
+
+form#login-form{
+    margin : 5% auto auto auto;
 }
 
 h2#clock{
