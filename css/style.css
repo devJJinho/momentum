@@ -38,6 +38,7 @@ h2#clock{
     font-size:45pt;
     margin :20px;
     padding-bottom: 10px;
+    width:auto;
 }
 input{
     font-family: 'Nanum Gothic',sans-serif;
