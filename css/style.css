@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Nanum+Gothic:wght@700&family=Nanum+Pen+Script&family=Rubik&display=swap');
 .hidden{
-    display: none; 
+    /* display: none;  */
     visibility: hidden;
 }
 

@@ -22,6 +22,12 @@ function paintGreeting(username){
     h1Title.innerText=`${greetingMsg} ${username}`;
     h1Title.classList.remove(CONSTANT.HIDDEN_CLASSNAME);
     greetingDiv.classList.remove(CONSTANT.HIDDEN_CLASSNAME);
+    greetingDiv.addEventListener('mouseover',()=>{
+        resetBtn.classList.remove(CONSTANT.HIDDEN_CLASSNAME);
+    });
+    greetingDiv.addEventListener('mouseout',()=>{
+        resetBtn.classList.add(CONSTANT.HIDDEN_CLASSNAME);
+    });
 }
 function hideGreeting(){
     greetingDiv.classList.add(CONSTANT.HIDDEN_CLASSNAME);
