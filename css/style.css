@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Nanum+Gothic:wght@700&family=Nanum+Pen+Script&family=Rubik&display=swap');
+.hidden{
+    /* display: none;  */
+    visibility: hidden;
+}
+
+.displayHidden{
+    display:none;
+}
+
+div#centerDiv{
+    width:70%;
+    height:70%;
+    margin : 3% auto auto auto;
+    text-align: center;
+}
+
+div#weatherDiv{
+    position: absolute;
+    top: 1px;
+    right: 10px;
+    display:flex;
+    vertical-align: center;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+div#todoDiv{
+    background:rgba(86, 105, 127, 0.5);
+    width:100%;
+    height:60%;
+    border-radius: 12px;
+    display: inline-block
+}
+span{
+    align-items: center;
+    display:inline-flex;
+    text-align: center;
+}
+
+form#login-form{
+    margin : 5% auto auto auto;
+}
+
+h2#clock{
+    font-family: 'Baloo Chettan 2', cursive;
+    color:white;
+    font-size:45pt;
+    margin :20px;
+    padding-bottom: 10px;
+    width:auto;
+}
+input{
+    font-family: 'Nanum Gothic',sans-serif;
+    color:grey;
+    width:50%;
+    height:30px;
+    text-align: center;
+    margin: 1%;
+    font-size:18pt;
+    border-radius: 10px;
+    border:0;
+    outline:0;
+}
+
+h1#weatherCity,h1#weatherInfo{
+    color: rgb(255, 255, 255);
+    font-size: 5;
+}
+
+div#background-overlay{
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-size:cover;
+}
+div#resetDiv{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left:20px;
+}
+
+ul{
+    text-align: start;
+    list-style: none;
+    font-size:22pt;
+    font-family: 'Nanum Gothic', sans-serif;
+    color: white;
+    align-self: start;
+    margin: auto 5px auto auto;
+    width: 90%;
+    height:70%;
+    overflow-y:scroll;
+    overflow-x:scroll;
+}
+
+li{
+    display:flex;
+    padding-bottom: 10px;
+}
+button#todoDelBtn{
+    background-color:transparent;
+    border:0;
+    outline: 0;
+    align-self:center;
+    padding-right:20px;
+}
+div#greetingDiv{
+    color: rgb(255, 255, 255);
+    font-family: 'Rubik', sans-serif;
+    display:inline-flex;
+    width:auto;
+    font-size: 2em;
+    margin : 0;
+}
+
+h1#greetingMsg{
+    margin:20px;
+}
+div#quoteDiv{
+    color: rgb(255, 255, 255);
+    font-family: 'Nanum Pen Script', cursive;
+    font-size:25pt;
+    align-self: flex-end;
+    padding-top: 1em;
+}

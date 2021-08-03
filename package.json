@@ -1,0 +1,28 @@
+{
+  "name": "momentum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/js/main.js",
+  "dependencies": {
+    "querystring": "^0.2.1"
+  },
+  "devDependencies": {
+    "css-loader": "^6.2.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.46.0",
+    "webpack-cli": "^4.7.2"
+  },
+  "scripts": {
+    "test": "echo \\\"Error: no test specifed\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devJJinho/momentum.git"
+  },
+  "author": "devJJinho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devJJinho/momentum/issues"
+  },
+  "homepage": "https://github.com/devJJinho/momentum#readme"
+}
