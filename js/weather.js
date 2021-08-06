@@ -1,9 +1,7 @@
 import { initGeo } from "./geo.js";
 import {CONSTANT} from "./constant.js";
-//import {fetch as nodeFetch} from "../node_modules/node-fetch";
 import {stringify} from "../node_modules/querystring/index";
 
-//const querystring =require("querystring");
 const weatherDiv=document.querySelector("#weatherDiv");
 const weatherInfo=document.querySelector("#weatherInfo");
 const weatherIcon=document.querySelector("#weatherDiv img");
@@ -31,13 +29,12 @@ async function initWeather(){
     }
     else{
         await getWeather();
-        if(handleWeatherInfo.getWeather!==false){
+        if(handleWeatherInfo.isError==false){
             paintWeather(handleWeatherInfo.getWeather());
         }
         else{
             hideWeather();
         }
-        
     }
 }
 
@@ -50,21 +47,17 @@ async function getWeather(){
         lng:geoInfo.lng
     });
     url.search=param;
-    console.log(url);
     try{
         const response=await fetch(url);
         const body=await response.json();
-        console.log(body);
-        handleWeatherInfo.setWeather(body);
         if(body.error){
-            handleWeatherInfo.setError();
-            }
+            throw("");
+        }
+        handleWeatherInfo.setWeather(body);
     }
     catch(error){
-        console.log(error);
         handleWeatherInfo.setError();
     };
-    
 }
 
 const handleWeatherInfo=(function(){
