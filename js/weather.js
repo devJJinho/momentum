@@ -14,8 +14,12 @@ function paintWeather(weather){
     const temp=(weather.main.temp-CONSTANT.TEMP_INDEX).toFixed(1);
     weatherCity.innerText=weather.name;
     weatherInfo.innerText=`Temp : ${temp}°`;
-    weatherIcon.src=`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`;
-    weatherIcon.onload=()=>{weatherIcon.classList.remove(CONSTANT.SPINNING)}
+    const img=new Image();
+    img.src=`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`;
+    img.onload=()=>{
+        weatherIcon.classList.remove(CONSTANT.SPINNING);
+        weatherIcon.src=img.src;
+    }
     weatherDiv.classList.remove(CONSTANT.HIDDEN_CLASSNAME);
 }
 
