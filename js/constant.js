@@ -4,7 +4,8 @@ const CONSTANT={
     "USERNAME_KEY" : "username",
     "TODOS_KEY" : "todos",
     "WEATHER_KEY" : "weathers",
-    "TEMP_INDEX" : 273.15
+    "TEMP_INDEX" : 273.15,
+    "SPINNING" : "spinning"
 }
 
 export {CONSTANT}
