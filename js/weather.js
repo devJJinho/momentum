@@ -11,11 +11,12 @@ const BASE_URL="https://devjjinho7hideapikey.netlify.app"
 const PATH=".netlify/functions/weather";
 
 function paintWeather(weather){
+    console.log("페인트 시작");
     const temp=(weather.main.temp-CONSTANT.TEMP_INDEX).toFixed(1);
     weatherCity.innerText=weather.name;
     weatherInfo.innerText=`Temp : ${temp}°`;
     const img=new Image();
-    img.src=`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`;
+    img.src=`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`;
     img.onload=()=>{
         weatherIcon.classList.remove(CONSTANT.SPINNING);
         weatherIcon.src=img.src;
@@ -34,6 +35,7 @@ async function initWeather(){
     }
     else{
         await getWeather();
+        console.log("after getweatehr")
         if(handleWeatherInfo.isError==false){
             paintWeather(handleWeatherInfo.getWeather());
         }
@@ -59,6 +61,7 @@ async function getWeather(){
             throw("");
         }
         handleWeatherInfo.setWeather(body);
+        console.log("set weather 끝");
     }
     catch(error){
         handleWeatherInfo.setError();
