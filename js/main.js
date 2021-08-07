@@ -38,7 +38,18 @@ const username=(function username(name){
     }
 })();
 
-window.onload=function(){
+// window.onload=function(){
+//     paintBg;
+//     username.syncName();
+//     if(username.isLogin()){
+//         pageInit();
+//     }
+//     else{
+//         paintLogin();
+//     }
+// }
+
+(function(){
     paintBg;
     username.syncName();
     if(username.isLogin()){
@@ -47,7 +58,7 @@ window.onload=function(){
     else{
         paintLogin();
     }
-}
+})();
 
 function pageInit(){
     paintGreeting(username.getName());

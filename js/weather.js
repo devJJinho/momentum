@@ -26,6 +26,7 @@ function paintWeather(weather){
 
 function hideWeather(){
     weatherDiv.classList.add(CONSTANT.HIDDEN_CLASSNAME);
+    console.log("hide");
 }
 
 async function initWeather(){
