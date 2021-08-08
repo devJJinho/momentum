@@ -9,7 +9,6 @@ import '../css/style.css';
 
 const loginInput=document.querySelector("#login-form input");
 const loginForm=document.querySelector("#login-form");
-// const mainContents=document.querySelector("#centerDiv");
 
 const username=(function username(name){
     let username="";
@@ -38,18 +37,7 @@ const username=(function username(name){
     }
 })();
 
-// window.onload=function(){
-//     paintBg;
-//     username.syncName();
-//     if(username.isLogin()){
-//         pageInit();
-//     }
-//     else{
-//         paintLogin();
-//     }
-// }
-
-(function(){
+window.onload=function(){
     paintBg;
     username.syncName();
     if(username.isLogin()){
@@ -58,7 +46,7 @@ const username=(function username(name){
     else{
         paintLogin();
     }
-})();
+}
 
 function pageInit(){
     paintGreeting(username.getName());
@@ -83,7 +71,6 @@ function paintLogin(){
     handleQuotes.hideQuotes();
     hideTodo();
     hideWeather();
-    // hideContents();
 
     loginForm.classList.remove(CONSTANT.DISPLAY_HIDDEN_CLASSNAME);
     loginForm.addEventListener("submit",handleLoginSubmit); 
@@ -93,9 +80,6 @@ function hideLogin(){
     loginForm.classList.add(CONSTANT.DISPLAY_HIDDEN_CLASSNAME);
 }
 
-// function hideContents(){
-//     mainContents.classList.add(CONSTANT.HIDDEN_CLASSNAME);
-// }
 window.onfocus=()=>{
     if(username.isLogin()){
         initWeather()

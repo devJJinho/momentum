@@ -37,7 +37,7 @@ async function initWeather(){
     else{
         await getWeather();
         console.log("after getweatehr")
-        if(handleWeatherInfo.isError==false){
+        if(handleWeatherInfo.getWeather!=false){
             paintWeather(handleWeatherInfo.getWeather());
         }
         else{
